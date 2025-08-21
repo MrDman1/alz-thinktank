@@ -1,0 +1,15 @@
+# config/splits.yaml
+# Reproducible split plan: site-aware + time-aware.
+seed: 42
+strategy:
+  type: "site_time_aware"
+  site_col: "site_id"
+  time_col: "visit_date"
+  # Hold out these sites entirely when present (simulates external validation)
+  holdout_sites: []
+  # Fractions for train/val/test within remaining sites (by time blocks)
+  fractions:
+    train: 0.6
+    val: 0.2
+    test: 0.2
+date_format: "%Y-%m-%d"

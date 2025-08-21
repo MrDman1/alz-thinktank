@@ -1,0 +1,7 @@
+pandas
+numpy
+lifelines
+scikit-learn
+matplotlib
+pyyaml
+pyarrow

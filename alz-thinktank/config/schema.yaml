@@ -1,0 +1,27 @@
+# config/schema.yaml
+# Normalized column schema expected by the Curator.
+# Map your raw columns to these canonical names.
+columns:
+  age: ["age", "Age"]
+  sex: ["sex", "Sex"]
+  apoe: ["apoe", "APOE", "apoe_genotype"]
+  mmse: ["mmse", "MMSE"]
+  adas: ["adas", "ADAS13", "ADAS"]
+  visit_date: ["visit_date", "VISITDATE"]
+  site_id: ["site_id", "SITE"]
+  diagnosis_baseline: ["dx_bl", "diagnosis_baseline"]
+  diagnosis_24m: ["dx_24m", "diagnosis_24m"]
+  mri_hippocampus: ["mri_hippocampus", "HippocampusVol"]
+  csf_abeta: ["csf_abeta", "CSF_ABETA"]
+  csf_tau: ["csf_tau", "CSF_TAU"]
+required:
+  - age
+  - sex
+  - apoe
+  - mmse
+  - visit_date
+  - site_id
+targets:
+  # Binary outcome for "progression within ~24 months"
+  # The Curator will derive 'progress_24m' if diagnosis change info exists.
+  progress_24m: ["progress_24m"]
